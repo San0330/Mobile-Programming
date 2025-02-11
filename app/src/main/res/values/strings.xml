@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="big_text">Big Text</string>
+    <string name="small_text">Small Text</string>
+    <string name="aligned_text">Aligned Text</string>
+    <string name="first">First</string>
+    <string name="largest_here">Largest here</string>
+    <string name="third">Third</string>
+    <string name="first_item">First Item</string>
+    <string name="second_item">Second Item</string>
+    <string name="third_item">Third Item</string>
 </resources>

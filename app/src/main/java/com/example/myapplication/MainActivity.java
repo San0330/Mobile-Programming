@@ -2,11 +2,7 @@ package com.example.myapplication;
 
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,9 +12,9 @@ public class MainActivity extends AppCompatActivity {
 
         //- enable edge-to-edge display
         //- could be excluded
-        EdgeToEdge.enable(this);
+//        EdgeToEdge.enable(this);
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.linearlayout);
 
         //- used to handle window insets in an Android app
         //- could be excluded
