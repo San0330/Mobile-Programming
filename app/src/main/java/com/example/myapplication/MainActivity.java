@@ -16,9 +16,9 @@ public class MainActivity extends AppCompatActivity {
 
         //- enable edge-to-edge display
         //- could be excluded
-        EdgeToEdge.enable(this);
+//        EdgeToEdge.enable(this);
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.relativelayout);
 
         //- used to handle window insets in an Android app
         //- could be excluded
