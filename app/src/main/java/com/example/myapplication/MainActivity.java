@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         //- could be excluded
 //        EdgeToEdge.enable(this);
 
-        setContentView(R.layout.linearlayout);
+        setContentView(R.layout.login);
 
         //- used to handle window insets in an Android app
         //- could be excluded
