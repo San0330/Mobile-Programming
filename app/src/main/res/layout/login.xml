@@ -39,10 +39,18 @@
         android:hint="xxxxxx"/>
 
     <Button
-        android:layout_marginTop="10sp"
+        android:id="@+id/loginBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"/>
+        android:layout_marginTop="10sp"
+        android:text="Login" />
 
+    <Button
+        android:id="@+id/registerBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:backgroundTint="#aaaa00"
+        android:text="Register" />
 
 </LinearLayout>
