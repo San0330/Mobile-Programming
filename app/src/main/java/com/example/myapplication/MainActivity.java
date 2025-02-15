@@ -1,9 +1,9 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +15,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        // method 1: on register button
+        EditText emailEditText = findViewById(R.id.emailEt);
+
+        // method 1: on register button, need separate RegisterClickListener class
         Button myButton = findViewById(R.id.registerBtn);
         myButton.setOnClickListener(new RegisterClickListener());
 
@@ -24,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Login Button clicked", Toast.LENGTH_SHORT).show();
+                String email = emailEditText.getText().toString();
+                Toast.makeText(getApplicationContext(),"Login Button clicked, email: " + email, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -36,4 +39,5 @@ public class MainActivity extends AppCompatActivity {
                     .show();
         }
     }
+
 }
