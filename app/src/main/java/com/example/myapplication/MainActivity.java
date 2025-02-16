@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         //- enable edge-to-edge display
-        //- could be excluded
+        //- could excludedbe excluded
         EdgeToEdge.enable(this);
 
         setContentView(R.layout.relativelayout);
