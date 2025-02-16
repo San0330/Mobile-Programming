@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
         EditText emailEditText = findViewById(R.id.emailEt);
 
         // method 1: on register button, need separate RegisterClickListener class
-        Button myButton = findViewById(R.id.registerBtn);
-        myButton.setOnClickListener(new RegisterClickListener());
+        Button registerButton = findViewById(R.id.registerBtn);
+        registerButton.setOnClickListener(new RegisterClickListener());
 
         // method 2 : on login button
         Button loginBtn = findViewById(R.id.loginBtn);
@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String email = emailEditText.getText().toString();
-                Toast.makeText(getApplicationContext(),"Login Button clicked, email: " + email, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Login Button clicked, email: " + email,
+                        Toast.LENGTH_SHORT).show();
             }
         });
     }
