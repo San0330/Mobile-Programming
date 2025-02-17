@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:padding="10sp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adder / Multiplier"
+        android:layout_marginBottom="20sp"
+        android:textAlignment="center"
+        android:textColor="#00f"
+        android:textStyle="bold"
+        android:textSize="28sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/firstNumTV"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:text="First Number"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:id="@+id/firstNumET"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:hint="12"
+            android:layout_alignBaseline="@id/firstNumTV"
+            android:inputType="numberDecimal"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/secondNumTV"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:text="Second Number"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:id="@+id/secondNumET"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:hint="22"
+            android:layout_alignBaseline="@id/secondNumTV"
+            android:inputType="numberDecimal"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:text="Result: "
+            android:textSize="20sp"
+            android:layout_marginBottom="20sp"
+            />
+
+        <TextView
+            android:id="@+id/resultTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:layout_alignBaseline="@id/result"
+            android:textSize="20sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add" />
+
+        <Button
+            android:id="@+id/buttonMultiply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="Multiply" />
+
+    </LinearLayout>
+
+</LinearLayout>
