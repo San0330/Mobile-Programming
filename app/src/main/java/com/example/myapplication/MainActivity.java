@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,5 +32,13 @@ public class MainActivity extends AppCompatActivity {
 
         //- Insets represent the areas of the screen occupied by system UI
         //- elements like the status bar, navigation bar, and gesture insets.
+
+        //get string arrays from resources
+        Resources res = getResources();
+        String[] planets = res.getStringArray(R.array.planets);
+
+        for (int i = 0; i < planets.length; i++){
+            Log.i("Mainactivity", planets[i]);
+        }
     }
 }
