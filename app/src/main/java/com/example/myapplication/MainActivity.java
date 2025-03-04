@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                Intent i = new Intent(MainActivity.this, SecondActivity.class);
+               i.putExtra("id", 101);
+               i.putExtra("name", "Santosh Neupane");
+               i.putExtra("address", "Butwal");
                startActivity(i);
             }
         });
