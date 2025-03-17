@@ -2,9 +2,13 @@ package com.example.myapplication;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -14,7 +18,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,24 +38,26 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        Log.d("DEBUG MAIN", "ID " + R.id.item1 );
-
         //- Insets represent the areas of the screen occupied by system UI
         //- elements like the status bar, navigation bar, and gesture insets.
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        Button button = findViewById(R.id.btn);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showMenu(v);
+            }
+        });
+    }
+    public void showMenu(View v) {
+        PopupMenu popup = new PopupMenu(this,v);
+        popup.setOnMenuItemClickListener(this);
+        popup.inflate(R.menu.app_menu);
+        popup.show();
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.app_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onMenuItemClick(MenuItem item) {
         int itemId = item.getItemId();
         if (itemId == R.id.item1) {
             Toast.makeText(this, "Selected Item 1", Toast.LENGTH_SHORT).show();
@@ -63,8 +69,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Selected Item 3", Toast.LENGTH_SHORT).show();
             return true;
         } else {
-            return super.onOptionsItemSelected(item);
+            return false;
         }
-
     }
 }
