@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">LinearLayout</string>
     <string name="big_text">Big Text</string>
     <string name="small_text">Small Text</string>
     <string name="aligned_text">Aligned Text</string>
