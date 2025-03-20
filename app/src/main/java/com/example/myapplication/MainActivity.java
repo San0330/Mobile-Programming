@@ -2,12 +2,16 @@ package com.example.myapplication;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
@@ -34,24 +38,23 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        Log.d("DEBUG MAIN", "ID " + R.id.item1 );
-
         //- Insets represent the areas of the screen occupied by system UI
         //- elements like the status bar, navigation bar, and gesture insets.
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        Button btn = findViewById(R.id.btn);
+        registerForContextMenu(btn);
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.app_menu, menu);
-        return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onContextItemSelected(MenuItem item) {
         int itemId = item.getItemId();
         if (itemId == R.id.item1) {
             Toast.makeText(this, "Selected Item 1", Toast.LENGTH_SHORT).show();
@@ -63,8 +66,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Selected Item 3", Toast.LENGTH_SHORT).show();
             return true;
         } else {
-            return super.onOptionsItemSelected(item);
+            return super.onContextItemSelected(item);
         }
-
     }
 }
