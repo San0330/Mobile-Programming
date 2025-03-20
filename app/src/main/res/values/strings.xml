@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Mobile Programming</string>
+    <string name="app_name">String Array and Icon</string>
     <string-array name="semesters">
         <item>First</item>
         <item>Second</item>
