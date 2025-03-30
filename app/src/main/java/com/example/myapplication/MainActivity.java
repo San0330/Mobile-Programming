@@ -1,8 +1,13 @@
 package com.example.myapplication;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -30,5 +35,35 @@ public class MainActivity extends AppCompatActivity {
 
         //- Insets represent the areas of the screen occupied by system UI
         //- elements like the status bar, navigation bar, and gesture insets.
+
+        Button btn = findViewById(R.id.btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialog();
+            }
+        });
+    }
+
+    public void showDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Exit App");
+        builder.setMessage("Do you want to exit ?");
+        builder.setCancelable(true);
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(MainActivity.this, "clicked yes", Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(MainActivity.this, "clicked no", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 }
