@@ -1,6 +1,11 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,5 +35,22 @@ public class MainActivity extends AppCompatActivity {
 
         //- Insets represent the areas of the screen occupied by system UI
         //- elements like the status bar, navigation bar, and gesture insets.
+
+        String colors[] = {"Red", "Blue", "Green", "Yellow", "purple", "Indigo", "Violet", "Orange","Red", "Blue", "Green", "Yellow", "purple", "Indigo", "Violet", "Orange","Red", "Blue", "Green", "Yellow", "purple", "Indigo", "Violet", "Orange"};
+
+        ListView lv = (ListView) findViewById(R.id.lv);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_items, R.id.text, colors);
+        lv.setAdapter(adapter);
+
+
+        // if need to add onclick event to list item
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String value = adapter.getItem(position);
+                Toast.makeText(getApplicationContext(), value, Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }
