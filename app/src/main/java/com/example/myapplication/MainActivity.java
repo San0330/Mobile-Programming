@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,5 +31,29 @@ public class MainActivity extends AppCompatActivity {
 
         //- Insets represent the areas of the screen occupied by system UI
         //- elements like the status bar, navigation bar, and gesture insets.
+
+        ListView listView = findViewById(R.id.lv);
+        String[] title = {
+                "Username 1", "Username 2",
+                "Username 3", "Username 4"
+        };
+
+        String[] description = {
+                "This is description 1",
+                "This is description 2",
+                "This is description 3",
+                "This is description 4"
+        };
+
+        int[] image = {
+                R.drawable.ic_launcher_foreground,
+                R.drawable.ic_launcher_foreground,
+                R.drawable.ic_launcher_foreground,
+                R.drawable.ic_launcher_foreground,
+        };
+
+        MyListAdapter adapter = new MyListAdapter(this, R.layout.item, title, description, image);
+        listView.setAdapter(adapter);
+
     }
 }
