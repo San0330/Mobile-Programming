@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.widget.GridView;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -32,17 +33,17 @@ public class MainActivity extends AppCompatActivity {
         //- Insets represent the areas of the screen occupied by system UI
         //- elements like the status bar, navigation bar, and gesture insets.
 
-        ListView listView = findViewById(R.id.lv);
+        GridView gridView = findViewById(R.id.gv);
         String[] title = {
                 "Username 1", "Username 2",
                 "Username 3", "Username 4"
         };
 
         String[] description = {
-                "This is description 1",
-                "This is description 2",
-                "This is description 3",
-                "This is description 4"
+                "This is desc 1",
+                "This is desc 2",
+                "This is desc 3",
+                "This is desc 4"
         };
 
         int[] image = {
@@ -52,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ic_launcher_foreground,
         };
 
-        MyListAdapter adapter = new MyListAdapter(this, R.layout.item, title, description, image);
-        listView.setAdapter(adapter);
+        MyGridAdapter adapter = new MyGridAdapter(this, title, description, image);
+        gridView.setAdapter(adapter);
 
     }
 }
