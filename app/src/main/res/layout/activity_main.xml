@@ -8,9 +8,10 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ListView
+    <GridView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lv"/>
+        android:numColumns="3"
+        android:id="@+id/gv"/>
 
 </LinearLayout>

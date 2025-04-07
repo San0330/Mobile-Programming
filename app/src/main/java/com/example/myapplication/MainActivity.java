@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -38,13 +39,13 @@ public class MainActivity extends AppCompatActivity {
 
         String colors[] = {"Red", "Blue", "Green", "Yellow", "purple", "Indigo", "Violet", "Orange","Red", "Blue", "Green", "Yellow", "purple", "Indigo", "Violet", "Orange","Red", "Blue", "Green", "Yellow", "purple", "Indigo", "Violet", "Orange"};
 
-        ListView lv = (ListView) findViewById(R.id.lv);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_items, R.id.text, colors);
-        lv.setAdapter(adapter);
+        GridView gv = (GridView) findViewById(R.id.gv);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.grid_items, R.id.text, colors);
+        gv.setAdapter(adapter);
 
 
         // if need to add onclick event to list item
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String value = adapter.getItem(position);
