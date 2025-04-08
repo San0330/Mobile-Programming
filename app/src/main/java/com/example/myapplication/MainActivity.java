@@ -7,8 +7,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    private RecyclerView recyclerView;
+    private MyAdapter adapter;
+    private List<MyItem> itemList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,5 +39,17 @@ public class MainActivity extends AppCompatActivity {
 
         //- Insets represent the areas of the screen occupied by system UI
         //- elements like the status bar, navigation bar, and gesture insets.
+
+        recyclerView = findViewById(R.id.rv);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        // Sample data
+        itemList = new ArrayList<>();
+        itemList.add(new MyItem("Item 1"));
+        itemList.add(new MyItem("Item 2"));
+        itemList.add(new MyItem("Item 3"));
+
+        adapter = new MyAdapter(itemList);
+        recyclerView.setAdapter(adapter);
     }
 }
