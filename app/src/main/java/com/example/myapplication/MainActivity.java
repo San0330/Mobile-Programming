@@ -65,23 +65,21 @@ public class MainActivity extends AppCompatActivity {
         selectBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    ArrayList<Integer> ids = new ArrayList<Integer>();
-                    ArrayList<String> names= new ArrayList<String>();
-                    ArrayList<String> addresses= new ArrayList<String>();
 
-                    Cursor cursor = dbHelper.selectData();
-                    while(cursor.moveToNext()){
-                        ids.add(cursor.getInt(0));
-                        names.add(cursor.getString(1));
-                        addresses.add(cursor.getString(2));
-                    }
+                ArrayList<Integer> ids = new ArrayList<Integer>();
+                ArrayList<String> names= new ArrayList<String>();
+                ArrayList<String> addresses= new ArrayList<String>();
 
-                    ListAdapter adapter = new ListAdapter(MainActivity.this,R.layout.list, ids, names, addresses);
-                    listView.setAdapter(adapter);
-                }catch (Exception e){
-                    Log.e("SQLite", e.getMessage());
+                Cursor cursor = dbHelper.selectData();
+                while(cursor.moveToNext()){
+                    ids.add(cursor.getInt(0));
+                    names.add(cursor.getString(1));
+                    addresses.add(cursor.getString(2));
                 }
+
+                ListAdapter adapter = new ListAdapter(MainActivity.this,R.layout.list, ids, names, addresses);
+                listView.setAdapter(adapter);
+
             }
         });
 
