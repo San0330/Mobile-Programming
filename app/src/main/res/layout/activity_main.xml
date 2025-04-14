@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="10sp"
-            android:text="Select/Update list"
+            android:text="Select/Display list"
             android:id="@+id/btnSelect"/>
 
         <!-- Add buttons for update and delete see book p-179 -->
