@@ -17,6 +17,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 // here we only show the response from server in textview
+// the code for php server is located at: /MyApplication/app/src/main/server
 public class MainActivity extends AppCompatActivity {
 
     @Override
