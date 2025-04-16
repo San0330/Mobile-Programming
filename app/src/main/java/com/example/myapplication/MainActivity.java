@@ -26,6 +26,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 // here we show the response from server in Listview
+// the code for php server is located at: /MyApplication/app/src/main/server
 // we use model class (Student with attribute sid and name)
 public class MainActivity extends AppCompatActivity {
 
