@@ -31,7 +31,6 @@ import java.util.Map;
 
 // here we show the submit data to server
 // the code for php server is located at: /MyApplication/app/src/main/server
-// we use model class (Student with attribute sid and name)
 public class MainActivity extends AppCompatActivity {
 
     EditText editTextId, editTextName;
@@ -76,23 +75,24 @@ public class MainActivity extends AppCompatActivity {
 
     private void sendData(String id, String name) {
         // URL to send the GET request to
-        String url = "http://192.168.1.108:8000/setData.php";
+        // update this to your laptop's/server IP address
+        String url = "http://192.168.10.211:8000/setData.php";
 
         // Instantiate the RequestQueue
         RequestQueue queue = Volley.newRequestQueue(this);
 
-        // Create a GET request
+        // Create a POST request
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 response -> Toast.makeText(MainActivity.this, "Response: " + response, Toast.LENGTH_LONG).show(),
                 error -> Toast.makeText(MainActivity.this, "Error: " + error.toString(), Toast.LENGTH_LONG).show()) {
 
             @Override
-                protected Map<String, String> getParams() {
-                    Map<String, String> params = new HashMap<>();
-                    params.put("sid", id);
-                    params.put("name", name);
-                    return params;
-                }
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<>();
+                params.put("sid", id);
+                params.put("name", name);
+                return params;
+            }
         };
 
         // Add the request to the RequestQueue
